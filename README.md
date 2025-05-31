@@ -41,9 +41,21 @@ Then the sorted summary should return:
 ## Tech Stack
 
 - [Vite](https://vitejs.dev/) – lightweight bundler for rapid development
-- TypeScript – type-safe logic
-- [Vitest](https://vitest.dev/) – fast test runner (Jest alternative)
+- [TypeScript] (https://www.typescriptlang.org/) – type-safe logic
+- [Vitest](https://vitest.dev/) – fast test runner
 - [uuid](https://www.npmjs.com/package/uuid) – unique match IDs
+
+---
+
+## ⚡ Why Vitest?
+
+Traditional testing tools like Jest can be slower in modern TypeScript-based setups. Vitest, powered by Vite, offers:
+
+- Vitest offers Jest-like syntax (describe, it, expect), making the transition seamless for Jest users
+- Native **ESM support**
+- Extremely **fast cold starts**
+- Smart **dependency graphing**
+- Better performance in large or modular TypeScript projects
 
 ---
 
@@ -64,12 +76,6 @@ Then the sorted summary should return:
 ```bash
 npm install
 ````
-
-### Start development server
-
-```bash
-npm run dev
-```
 
 ### Run tests
 
