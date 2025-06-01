@@ -41,7 +41,7 @@ Then the sorted summary should return:
 ## Tech Stack
 
 - [Vite](https://vitejs.dev/) – lightweight bundler for rapid development
-- [TypeScript] (https://www.typescriptlang.org/) – type-safe logic
+- [TypeScript](https://www.typescriptlang.org/) – type-safe logic
 - [Vitest](https://vitest.dev/) – fast test runner
 - [uuid](https://www.npmjs.com/package/uuid) – unique match IDs
 
