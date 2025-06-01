@@ -54,16 +54,22 @@ describe("Scoreboard", () => {
     const id1 = scoreboard.startMatch("Mexico", "Canada");
     await wait(10);
     const id2 = scoreboard.startMatch("Spain", "Brazil");
-    await wait(10);
+    await wait(20);
     const id3 = scoreboard.startMatch("Germany", "France");
+    await wait(30);
+    const id4 = scoreboard.startMatch("Uruguay", "Italy");
+    await wait(40);
+    const id5 = scoreboard.startMatch("Argentina", "Australia");
 
     scoreboard.updateScore(id1, 0, 5);
     scoreboard.updateScore(id2, 10, 2);
     scoreboard.updateScore(id3, 2, 2);
+    scoreboard.updateScore(id4, 6, 6);
+    scoreboard.updateScore(id5, 3, 1);
 
     const summary = scoreboard.getSummary();
     // Should be sorted by total score (desc), then by recency (desc)
-    expect(summary.map((m) => m.id)).toEqual([id2, id1, id3]);
+    expect(summary.map((m) => m.id)).toEqual([id4, id2, id1, id5, id3]);
   });
 });
 
