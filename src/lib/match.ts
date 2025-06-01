@@ -1,9 +1,12 @@
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 export class Match {
+  // Each match starts with zero scores for both teams
   private _homeScore: number = 0;
   private _awayScore: number = 0;
+  // Unique identifier for each match
   public readonly id: string;
+  // Team names and match start time
   public homeTeam: string;
   public awayTeam: string;
   public startTime: Date;
@@ -13,12 +16,13 @@ export class Match {
     awayTeam: string,
     startTime: Date = new Date()
   ) {
-    if (homeTeam.trim() === '' || awayTeam.trim() === '') {
-      throw new Error('Team names cannot be empty.');
+    // Basic input validation for team names
+    if (homeTeam.trim() === "" || awayTeam.trim() === "") {
+      throw new Error("Team names cannot be empty.");
     }
 
     if (homeTeam.toLowerCase() === awayTeam.toLowerCase()) {
-      throw new Error('Matches cannot be started between the same teams.');
+      throw new Error("Matches cannot be started between the same teams.");
     }
 
     this.homeTeam = homeTeam;
@@ -28,14 +32,13 @@ export class Match {
     this.id = uuidv4();
   }
 
-
   get homeScore(): number {
     return this._homeScore;
   }
 
   set homeScore(value: number) {
     if (value < 0) {
-      throw new Error('homeScore cannot be negative.');
+      throw new Error("homeScore cannot be negative.");
     }
     this._homeScore = value;
   }
@@ -46,7 +49,7 @@ export class Match {
 
   set awayScore(value: number) {
     if (value < 0) {
-      throw new Error('awayScore cannot be negative.');
+      throw new Error("awayScore cannot be negative.");
     }
     this._awayScore = value;
   }
